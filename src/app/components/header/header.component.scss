@@ -1,15 +1,14 @@
 /* home-banner.component.scss */
 .hero-section {
   position: relative;
-  margin-top: 100px;
+  width: 50%;
   height: 100vh;
   background: url('./../../../assets/banner.png');
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
-  color: rgb(0, 0, 0);
-  
+ 
   
 }
 
@@ -101,7 +100,8 @@
 @media (max-width: 768px) {
 
   .hero-section{
-    max-height: 425px;
+    width: 100%;
+    max-height: 460px;
   }
   .hero-text h2 {
     font-size: 1.8rem;
@@ -115,6 +115,10 @@
 }
 
 @media (max-width: 576px) {
+  .hero-section{
+    width: 100%;
+    max-height: 410px;
+  }
   .hero-text {
     
     h2 {
