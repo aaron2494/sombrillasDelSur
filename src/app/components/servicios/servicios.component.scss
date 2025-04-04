@@ -1,184 +1,142 @@
 /* servicios.component.scss */
 .services-section {
-    position: relative;
-    background-color: rgb(30, 65, 89);
-    color: white;
-    padding: 4rem 0 8rem;
-    overflow: hidden;
-  }
+  position: relative;
+  background-color: rgb(30, 65, 89);
+  color: white;
+  padding: 4rem 0 8rem;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.carousel {
+  max-width: 900px; // Aumentamos el ancho máximo para acomodar dos items
+  margin: 0 auto;
+}
+
+.carousel-inner {
+  height: auto; // Cambiamos a altura automática
+  position: relative;
+}
+
+.carousel-item {
+  position: relative;
+  width: 100%;
+  padding: 0 15px;
+  padding-bottom: 60px; // Espacio para los indicadores
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   
-  .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    font-weight: bold;
-    letter-spacing: 3px;
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-image-container {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
   
-  .carousel {
-    max-width: 400px;
-    margin: 0 auto;
-    
-  }
-  
-  .carousel-inner {
-    // Aseguramos que el contenedor interno no cambie de tamaño
-    height: 658px; // Ajusta esta altura según necesites
-    position: relative;
-  }
-  
-  .carousel-item {
-    position: absolute;
-    top: 0;
-    left: 0;
+  img {
+      border-radius: 5%;
     width: 100%;
     height: 100%;
-   
-    padding-bottom: 60px; // Espacio para los indicadores
-    
+    object-fit: cover;
+    opacity: 0.9;
+  }
+}
+
+.service-text-container {
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+  min-height: 150px;
   
+  h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  
+  p {
+      color: #aaaaaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+.carousel-control-prev, .carousel-control-next{
+  opacity: 0;
+}
+/* Resto de tus estilos... mantén los que ya tienes para indicators, controls, etc. */
+
+/* Ajustes responsivos */
+@media (max-width: 992px) {
+  .carousel {
+    max-width: 400px;
   }
   
   .service-image-container {
-    height: 400px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    
-    img {
-        border-radius: 5%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.9;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+    height: 350px;
+  }
+  
+  .service-text-container h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 3rem 0 6rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
   }
   
   .service-text-container {
-    color: #ffffff;
-    padding: 2rem;
-    text-align: center;
-    min-height: 150px; // Altura fija para el texto
+    padding: 1.5rem;
+    min-height: 130px;
     
     h3 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
+      font-size: 1.4rem;
     }
     
     p {
-        color: #aaaaaa;
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
-      
+      font-size: 1rem;
     }
   }
-  
-  .carousel-indicators-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-top: 1rem;
+}
+
+@media (max-width: 576px) {
+  .service-image-container {
+    height: 250px;
   }
   
-  .carousel-indicators {
-    position: static;
-    margin: 0;
-  
+  .service-text-container {
+    padding: 1rem;
+    min-height: 110px;
     
-    button {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      border: 2px solid white;
-      background-color: transparent;
-      margin: 0 5px;
-      
-      &.active {
-        background-color: white;
-      }
+    h3 {
+      font-size: 1.2rem;
     }
   }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    opacity: 0;
-  }
-  
-  .diagonal-cut {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: white;
-    clip-path: polygon(0 0%, -100% 0, 100% 100%, 0% 100%);
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 992px) {
-    .carousel-inner {
-      height: 500px;
-    }
-    
-    .service-image-container {
-      height: 350px;
-    }
-    
-    .service-text-container h3 {
-      font-size: 1.6rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .services-section {
-      padding: 3rem 0 6rem;
-    }
-    
-    .section-title {
-      font-size: 2rem;
-    }
-    
-    .carousel-inner {
-      height: 450px;
-    }
-    
-    .service-text-container {
-      padding: 1.5rem;
-      min-height: 130px;
-      
-      h3 {
-        font-size: 1.4rem;
-      }
-      
-      p {
-        font-size: 1rem;
-      }
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .carousel-inner {
-      height: 400px;
-    }
-    
-    .service-image-container {
-      height: 250px;
-    }
-    
-    .service-text-container {
-      padding: 1rem;
-      min-height: 110px;
-      
-      h3 {
-        font-size: 1.2rem;
-      }
-    }
-  }
+}
