@@ -1,7 +1,7 @@
 /* reviews.component.scss */
 .reviews-section {
     padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 10rem;
     padding-left: 1rem;
     padding-right: 1rem;
     background-color: #1a1a1a;
@@ -17,7 +17,7 @@
     font-size: 1.5rem;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
-    color:#ffae00;
+    color:#ffffff;
     font-weight: 700;
   }
   
@@ -34,7 +34,7 @@
     }
     
     &::-webkit-scrollbar-thumb {
-      background: #ffae00;
+      background: rgb(30, 65, 89);
       border-radius: 2px;
     }
   }
@@ -60,7 +60,7 @@
     border-radius: 50%;
     object-fit: cover;
     margin-right: 1rem;
-    border: 2px solid #ffae00;
+    border: 2px solid rgb(30, 65, 89);
   }
   
   .reviewer-info {
@@ -144,10 +144,7 @@
   }
   
   @media (min-width: 576px) {
-    .reviews-section {
-      padding: 3rem 1.5rem;
-    }
-    
+  
     .section-title {
       font-size: 1.8rem;
       margin-bottom: 2rem;
@@ -175,7 +172,7 @@
 .quote-overlay-container {
   position: relative;
   width: 100%;
-  margin: -50px 0; /* Ajusta para superponer */
+  margin: -51px 0; /* Ajusta para superponer */
 }
 
 .quote-overlay {
@@ -214,9 +211,13 @@
 
 /* Responsive */
 @media (min-width: 768px) {
+  .quote-overlay-container {
+    
+    margin: -85px 0; /* Ajusta para superponer */
+  }
   .quote-overlay {
     width: 250px;
-    height: 250px;
+    height: 165px;
     
     h2 {
       font-size: 2.2rem;

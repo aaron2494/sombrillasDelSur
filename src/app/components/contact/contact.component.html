@@ -34,34 +34,8 @@
     </div>
   </div>
 
-  <!-- Fechas -->
-  <div class="form-row">
-    <div class="form-group">
-  
-      <input type="date" id="fechaSalida" placeholder="saldia" formControlName="fechaSalida">
-      <div *ngIf="hasError('fechaSalida', 'required')" class="error-message">
-        {{ getErrorMessage('fechaSalida') }}
-      </div>
-    </div>
-
-    <div class="form-group">
-     
-      <input type="date" id="fechaRegreso" formControlName="fechaRegreso">
-      <div *ngIf="hasError('fechaRegreso', 'required')" class="error-message">
-        {{ getErrorMessage('fechaRegreso') }}
-      </div>
-    </div>
-  </div>
-
   <!-- Origen y Destino -->
   <div class="form-row">
-    <div class="form-group">
-      <input type="text" id="origen" placeholder="Origen" formControlName="origen">
-      <div *ngIf="hasError('origen', 'required')" class="error-message">
-        {{ getErrorMessage('origen') }}
-      </div>
-    </div>
-
     <div class="form-group">
       <input type="text" id="destino" placeholder="Destino" formControlName="destino">
       <div *ngIf="hasError('destino', 'required')" class="error-message">
@@ -70,24 +44,14 @@
     </div>
   </div>
 
-  <!-- Pasajeros -->
-  <div class="form-group">
-    <input type="number" id="pasajeros" placeholder="Cantidad de pasajeros" formControlName="pasajeros" min="1">
-    <div *ngIf="hasError('pasajeros', 'required')" class="error-message">
-      {{ getErrorMessage('pasajeros') }}
-    </div>
-    <div *ngIf="hasError('pasajeros', 'min')" class="error-message">
-      {{ getErrorMessage('pasajeros') }}
-    </div>
-  </div>
 
   <!-- Comentarios -->
   <div class="form-group">
-    <textarea id="comentarios" placeholder="Comentarios" formControlName="comentarios" rows="3"></textarea>
+    <textarea id="comentarios" placeholder="Mensaje" formControlName="comentarios" rows="3"></textarea>
   </div>
 
   <!-- Botón de enviar -->
   <button type="submit" class="submit-btn" [disabled]="isLoading">
-    {{ isLoading ? 'ENVIANDO...' : 'COTIZAR VIAJE' }}
+    {{ isLoading ? 'ENVIANDO...' : 'ENVIAR' }}
   </button>
 </form>
