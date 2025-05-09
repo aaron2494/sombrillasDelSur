@@ -35,17 +35,8 @@ export class ServiciosComponent implements OnInit {
   
   groupedServices: any[][] = [];
 
-  ngOnInit() {
-    this.groupServices();
-  }
-
-  groupServices() {
-    const groupSize = 2;
-    for (let i = 0; i < this.services.length; i += groupSize) {
-      this.groupedServices.push(this.services.slice(i, i + groupSize));
-    }
-   {
-
+  ngOnInit(): void {
+    // Calculamos el número total de items para la animación
+    document.documentElement.style.setProperty('--total-items', this.services.length.toString());
 }
-  }
 }

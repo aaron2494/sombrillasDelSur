@@ -7,15 +7,3 @@ body {
   flex-direction: column;
   font-family: 'Poppins', sans-serif !important;
   }
-  
-  .about-section, .skills-section, .projects-section {
-    padding: 100px 0;
-  }
-  
-  .card {
-    transition: transform 0.3s;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
