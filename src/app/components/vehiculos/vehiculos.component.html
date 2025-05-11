@@ -1,24 +1,53 @@
-<!-- vehicle-fleet.component.html -->
-
 <section class="vehicle-section" [class.visible]="isVisible">
+  <div class="container">
+    <h2 class="section-title">NUESTROS COMBOS</h2>
     
-    <div class="container">
-      <h2 class="section-title">NUESTROS COMBOS</h2>
-      
-      <div class="vehicles-container">
-        <div *ngFor="let vehicle of vehicles" 
-             class="vehicle-card" 
-             [class]="vehicle.animationClass">
-          <div class="vehicle-image-container">
-            <img [src]="vehicle.image" [alt]="vehicle.title" class="vehicle-image">
-          </div>
-          <div class="vehicle-info">
-            <h3>{{vehicle.title}}</h3>
-            <p>{{vehicle.description}}</p>
-          </div>
+    <div class="vehicles-container">
+      <div *ngFor="let vehicle of vehicles; let i = index" 
+           class="vehicle-card" 
+           [class]="vehicle.animationClass"
+           (click)="openModal(i)">
+        <div class="vehicle-image-container">
+          <img [src]="vehicle.image" [alt]="vehicle.title" class="vehicle-image">
+        </div>
+        <div class="vehicle-info">
+          <h3>{{vehicle.title}}</h3>
+          <p>{{vehicle.description}}</p>
+          <button class="view-details-btn">Ver detalles</button>
         </div>
       </div>
     </div>
-    <div class="diagonal-cut"></div>
-  </section> 
- 
+  </div>
+  <div class="diagonal-cut"></div>
+</section>
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-modal" (click)="closeModal()">&times;</button>
+    
+    <div class="modal-body">
+      <div class="modal-image-container">
+        <img [src]="selectedVehicle?.image" [alt]="selectedVehicle?.title" class="modal-image">
+      </div>
+      
+      <div class="modal-details">
+        <h3>{{selectedVehicle?.title}}</h3>
+        <p class="modal-description">{{selectedVehicle?.description}}</p>
+        
+        <div class="features">
+          <h4>Características:</h4>
+          <ul>
+            <li *ngFor="let feature of selectedVehicle?.features">{{feature}}</li>
+          </ul>
+        </div>
+        
+        <div class="modal-actions">
+          <a class="whatsapp-btn" [href]="whatsappLink" target="_blank">
+            <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
