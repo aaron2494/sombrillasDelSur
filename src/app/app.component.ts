@@ -23,14 +23,40 @@ import { Meta, Title } from '@angular/platform-browser';
 export class AppComponent {
   constructor(private meta: Meta, private title: Title) {}
   ngOnInit() {
-    this.title.setTitle('Sombrillas del sur- Sur de Argentina | Empresa sombrillas del sur');
+    this.title.setTitle('Sombrillas del sur | Empresa sombrillas del sur');
     this.meta.addTags([
-      { name: 'description', content: 'Empresa líder en transporte de pasajeros en combis por el sur de Argentina. Servicios confiables y rutas cubiertas en toda la Patagonia.' },
-      { name: 'keywords', content: 'transporte combis, pasajeros sur argentina, viajes patagonia, combis patagónicas, transporte terrestre argentina' },
-      { name: 'og:title', content: 'Transporte en Combis - Sur de Argentina | Empresa troncoso transfers' },
-      { name: 'og:description', content: 'Servicios de transporte en combis por toda la Patagonia Argentina' },
-      { name: 'og:type', content: 'website' },
-      { name: 'og:locale', content: 'es_AR' }
+      {
+        name: 'description',
+        content: 'Fabricamos sombrillas, mesas y sillas de caño y madera en Argentina. Calidad, diseño y durabilidad para hogares, bares y restaurantes.'
+      },
+      {
+        name: 'keywords',
+        content: 'sombrillas, mesas de caño, sillas de madera, fábrica de mobiliario, sombrillas para jardín, muebles exteriores, mesas y sillas resistentes, muebles para bares'
+      },
+      {
+        name: 'og:title',
+        content: 'Sombrillas del Sur | Fábrica de Sombrillas, Mesas y Sillas'
+      },
+      {
+        name: 'og:description',
+        content: 'Conocé nuestros productos de excelente calidad: sombrillas, mesas y sillas ideales para espacios exteriores. Fabricación nacional.'
+      },
+      {
+        name: 'og:type',
+        content: 'website'
+      },
+      {
+        name: 'og:locale',
+        content: 'es_AR'
+      },
+      {
+        name: 'og:url',
+        content: 'https://sombrillasdelsur.com.ar'
+      },
+      {
+        name: 'og:site_name',
+        content: 'Sombrillas del Sur'
+      }
     ]);
   }
 }
