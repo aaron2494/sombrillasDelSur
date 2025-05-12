@@ -13,7 +13,7 @@
 .form-section {
   width: 100%;
   padding: 4rem 1rem;
-  background-color: rgb(30, 65, 89);
+  background-color: rgb(18, 35, 98);;
   
   @media (min-width: 768px) {
     width: 50%;
@@ -47,11 +47,11 @@
     border: none;
     border-radius: 4px;
     background: #ffffff;
-    color: rgb(30, 65, 89);
+    color:rgb(18, 35, 98) ;
     font-size: 1rem;
     
     &::placeholder {
-      color: rgb(30, 65, 89);
+      color: rgb(18, 35, 98);
     }
   }
   
@@ -115,7 +115,7 @@
   @media (min-width: 768px) {
     display: block;
     width: 50%;
-    background-image: url('./../../../assets/banner.png');
+    background-image: url('./../../../assets/sds-banner.png');
     background-size: cover;
     background-position: center;
   }
